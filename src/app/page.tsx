@@ -1,17 +1,10 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { HeroSlider } from "@/components/universal/HeroSlider";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center p-6 gap-8">
-      {/* Hero section */}
-      <section className="w-full min-h-[80vh] flex flex-col items-center justify-center">
-        <h1 className="text-headline-2">Welcome to Next.js!</h1>
-        <div className="flex flex-col gap-6 items-center mt-8">
-          <Button>Переглянути всі проєкти</Button>
-          <Input placeholder="Введіть текст" />
-        </div>
-      </section>
+    <main className="flex flex-col items-center gap-8">
+      {/* Hero slider section */}
+      <HeroSlider />
 
       {/* Additional content to enable scrolling */}
       <section className="w-full max-w-4xl mx-auto py-16">

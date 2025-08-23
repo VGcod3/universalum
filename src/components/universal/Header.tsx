@@ -33,7 +33,7 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         // When scrolled, add backdrop blur and subtle background
-        isScrolled ? "bg-white/70 backdrop-blur-md" : "bg-transparent"
+        isScrolled ? " backdrop-blur" : "bg-transparent"
       )}
     >
       <div className="absolute left-0 top-0 flex">

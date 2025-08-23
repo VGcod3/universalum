@@ -11,12 +11,13 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-grayscale-white hover:bg-accent-orange text-grayscale-black hover:text-grayscale-white text-button rounded-md border border-grayscale-gray3 hover:border-accent-orange transition-all",
+          "bg-grayscale-white hover:bg-accent-orange text-grayscale-black hover:text-grayscale-white text-button rounded-md border border-grayscale-gray3 hover:border-accent-orange justify-between",
+        icon: "bg-transparent text-grayscale-white hover:text-accent-orange border border-grayscale-white hover:border-accent-orange rounded-md justify-center",
       },
+
       size: {
         default: "h-12 w-[293px] p-1 pl-4 gap-2.5",
-
-        icon: "size-9",
+        icon: "h-10 w-10",
       },
     },
     defaultVariants: {
@@ -31,6 +32,8 @@ function Button({
 
   asChild = false,
   children,
+  size,
+  variant,
   ...props
 }: React.ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & {
@@ -38,14 +41,18 @@ function Button({
   }) {
   const Comp = asChild ? Slot : "button";
 
+  const isDefault = variant === "default" || !variant;
+
   return (
     <Comp
       data-slot="button"
-      className={cn(buttonVariants({ className }))}
+      className={cn(buttonVariants({ className, size, variant }))}
       {...props}
     >
       {children}
-      <ArrowRight className="w-10 h-10 bg-accent-orange rounded p-2 text-grayscale-white" />
+      {isDefault && (
+        <ArrowRight className="w-10 h-10 bg-accent-orange rounded p-2 text-grayscale-white" />
+      )}
     </Comp>
   );
 }

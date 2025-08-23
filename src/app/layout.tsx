@@ -23,10 +23,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${ubuntu.variable} antialiased`}>
         <Header />
-        <div className="pt-24">
-          {/* Add padding-top to account for the fixed header */}
-          {children}
-        </div>
+
+        {/* Add padding-top to account for the fixed header */}
+        {children}
       </body>
     </html>
   );
