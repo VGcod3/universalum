@@ -19,7 +19,7 @@ export const ServicesPageSections = () => {
   );
 };
 
-const HeaderSection = ({ t }: { t: any }) => {
+const HeaderSection = ({ t }: { t: ReturnType<typeof useTranslations> }) => {
   return (
     <>
       <Image
@@ -30,7 +30,9 @@ const HeaderSection = ({ t }: { t: any }) => {
         className="object-cover object-top w-full h-50 md:h-75 lg:h-96"
       />
       <section className="container mx-auto mt-10 mb-10 md:mb-15 flex flex-col gap-5 md:gap-10 px-4 md:px-8 text-grayscale-black">
-        <h1 className="text-headline-3 md:text-headline-1">{t("pages.services.title")}</h1>
+        <h1 className="text-headline-3 md:text-headline-1">
+          {t("pages.services.title")}
+        </h1>
         <h3 className="text-headline-5 md:text-headline-3 lg:max-w-[50rem]">
           {t("pages.services.subtitle")}
         </h3>
@@ -39,7 +41,11 @@ const HeaderSection = ({ t }: { t: any }) => {
   );
 };
 
-const DescriptionSection = ({ t }: { t: any }) => {
+const DescriptionSection = ({
+  t,
+}: {
+  t: ReturnType<typeof useTranslations>;
+}) => {
   const advantages: {
     title: string;
     imageFirst: boolean;

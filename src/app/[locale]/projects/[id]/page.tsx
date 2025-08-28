@@ -1,14 +1,14 @@
-/* eslint-disable @next/next/no-img-element */
 import { setRequestLocale } from "next-intl/server";
 import { ProjectDetailSections } from "./ProjectDetailSections";
 
 import "swiper/css";
 
-export default function ProjectDetailPage({
-  params: { locale },
+export default async function ProjectDetailPage({
+  params,
 }: Readonly<{
-  params: { locale: "en" | "ua" | "pl" };
+  params: Promise<{ locale: "en" | "ua" | "pl"; id: string }>;
 }>) {
+  const { locale } = await params;
   // Enable static rendering
   setRequestLocale(locale);
 

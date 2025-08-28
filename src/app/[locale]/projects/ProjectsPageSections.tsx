@@ -14,7 +14,7 @@ export const ProjectsPageSections = () => {
   );
 };
 
-const HeaderSection = ({ t }: { t: any }) => {
+const HeaderSection = ({ t }: { t: ReturnType<typeof useTranslations> }) => {
   return (
     <>
       <Image

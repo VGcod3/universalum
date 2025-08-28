@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { Image } from "@/components";
@@ -16,7 +17,7 @@ export const AboutPageSections = () => {
   );
 };
 
-const HeaderSection = ({ t }: { t: any }) => {
+const HeaderSection = ({ t }: { t: ReturnType<typeof useTranslations> }) => {
   return (
     <>
       <Image
@@ -27,7 +28,9 @@ const HeaderSection = ({ t }: { t: any }) => {
         className="object-cover object-top w-full h-50 md:h-75 lg:h-96"
       />
       <section className="container mx-auto mt-10 mb-10 md:mb-15 flex flex-col gap-5 md:gap-10 px-4 md:px-8 text-grayscale-black">
-        <h1 className="text-headline-3 md:text-headline-1">{t("pages.about.title")}</h1>
+        <h1 className="text-headline-3 md:text-headline-1">
+          {t("pages.about.title")}
+        </h1>
         <h3 className="text-headline-5 md:text-headline-3 lg:max-w-[50rem]">
           {t("pages.about.subtitle1")}
         </h3>
@@ -39,7 +42,7 @@ const HeaderSection = ({ t }: { t: any }) => {
   );
 };
 
-const AdvantagesBlock = ({ t }: { t: any }) => {
+const AdvantagesBlock = ({ t }: { t: ReturnType<typeof useTranslations> }) => {
   return (
     <section className="my-20 container mx-auto px-4 md:px-8 flex flex-col gap-10">
       <div className="flex flex-col my-10 gap-8">
@@ -73,7 +76,9 @@ const AdvantagesBlock = ({ t }: { t: any }) => {
               className="absolute top-0 right-0"
             />
             <span className="text-headline-1">30+</span>
-            <span className="text-body-1 max-w-50">{t("pages.about.advantages.completedProjects")}</span>
+            <span className="text-body-1 max-w-50">
+              {t("pages.about.advantages.completedProjects")}
+            </span>
           </div>
         </div>
         <div className="flex flex-col md:flex-row gap-4">
@@ -105,7 +110,11 @@ const AdvantagesBlock = ({ t }: { t: any }) => {
   );
 };
 
-const DescriptionSection = ({ t }: { t: any }) => {
+const DescriptionSection = ({
+  t,
+}: {
+  t: ReturnType<typeof useTranslations>;
+}) => {
   const advantages = [
     {
       title: t("pages.about.features.experiencedTeam.title"),

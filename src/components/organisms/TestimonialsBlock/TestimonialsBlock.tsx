@@ -78,14 +78,14 @@ export const TestimonialsBlock = () => {
       prev === testimonials.length - 1 ? 0 : prev + 1
     );
     setIsAutoplay(false);
-  }, []);
+  }, [testimonials.length]);
 
   const prevSlide = useCallback(() => {
     setCurrentSlide((prev) =>
       prev === 0 ? testimonials.length - 1 : prev - 1
     );
     setIsAutoplay(false);
-  }, []);
+  }, [testimonials.length]);
 
   useEffect(() => {
     if (!isAutoplay) return;

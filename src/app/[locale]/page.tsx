@@ -7,11 +7,12 @@ import {
 import { ServicesBlock } from "@/components/universal/ServicesBlock";
 import { setRequestLocale } from "next-intl/server";
 
-export default function Home({
-  params: { locale },
+export default async function Home({
+  params,
 }: Readonly<{
-  params: { locale: "en" | "ua" | "pl" };
+  params: Promise<{ locale: "en" | "ua" | "pl" }>;
 }>) {
+  const { locale } = await params;
   // Enable static rendering
   setRequestLocale(locale);
 

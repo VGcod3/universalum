@@ -1,5 +1,1 @@
-export {
-  ProjectsSectionSlider,
-  type ProjectsSectionProps,
-  type Project,
-} from "./ProjectsSectionSlider";
+export { ProjectsSectionSlider, type Project } from "./ProjectsSectionSlider";

@@ -50,7 +50,7 @@ export const useContactForm = () => {
           message: result.message || t("form.error"),
         });
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus({
         type: "error",
         message: t("form.networkError"),

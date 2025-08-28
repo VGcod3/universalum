@@ -5,7 +5,7 @@ import { Image, Text } from "@/components/atoms";
 import { SliderControls } from "@/components/molecules";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/routing";
 
 export interface HeroSlide {

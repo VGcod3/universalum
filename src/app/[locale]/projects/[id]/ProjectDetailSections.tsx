@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { ProjectGallery } from "@/components/organisms/ProjectsGallery";
@@ -13,7 +14,7 @@ export const ProjectDetailSections = () => {
   );
 };
 
-const HeaderSection = ({ t }: { t: any }) => {
+const HeaderSection = ({ t }: { t: ReturnType<typeof useTranslations> }) => {
   return (
     <>
       <img

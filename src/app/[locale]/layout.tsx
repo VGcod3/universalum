@@ -11,7 +11,6 @@ import {
 } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
-import { LayoutProps } from "../../../.next/types/app/page";
 
 const ubuntu = Ubuntu({
   variable: "--font-ubuntu",

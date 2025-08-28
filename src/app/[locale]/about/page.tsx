@@ -3,11 +3,12 @@ import { CertificatesSlider } from "@/components/organisms/CertificatesSlider";
 import { setRequestLocale } from "next-intl/server";
 import { AboutPageSections } from "./AboutPageSections";
 
-export default function AboutPage({
-  params: { locale },
+export default async function AboutPage({
+  params,
 }: Readonly<{
-  params: { locale: "en" | "ua" | "pl" };
+  params: Promise<{ locale: "en" | "ua" | "pl" }>;
 }>) {
+  const { locale } = await params;
   // Enable static rendering
   setRequestLocale(locale);
 

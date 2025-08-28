@@ -5,51 +5,51 @@ type GoogleMapProps = {
   apiKey: string;
 };
 
+const customStyle: google.maps.MapTypeStyle[] = [
+  {
+    elementType: "geometry",
+    stylers: [{ color: "#f5f5f5" }],
+  },
+  {
+    elementType: "labels.icon",
+    stylers: [{ visibility: "off" }],
+  },
+  {
+    elementType: "labels.text.fill",
+    stylers: [{ color: "#616161" }],
+  },
+  {
+    elementType: "labels.text.stroke",
+    stylers: [{ color: "#f5f5f5" }],
+  },
+  {
+    featureType: "poi",
+    stylers: [{ visibility: "simplified" }],
+  },
+  {
+    featureType: "poi.park",
+    elementType: "geometry",
+    stylers: [{ color: "#e5e5e5" }],
+  },
+  {
+    featureType: "road",
+    elementType: "geometry",
+    stylers: [{ color: "#ffffff" }],
+  },
+  {
+    featureType: "road.highway",
+    elementType: "geometry",
+    stylers: [{ color: "#dadada" }],
+  },
+  {
+    featureType: "water",
+    elementType: "geometry",
+    stylers: [{ color: "#c9c9c9" }],
+  },
+];
+
 export const GoogleMap: React.FC<GoogleMapProps> = ({ apiKey }) => {
   const mapRef = useRef<HTMLDivElement | null>(null);
-
-  const customStyle: google.maps.MapTypeStyle[] = [
-    {
-      elementType: "geometry",
-      stylers: [{ color: "#f5f5f5" }],
-    },
-    {
-      elementType: "labels.icon",
-      stylers: [{ visibility: "off" }],
-    },
-    {
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#616161" }],
-    },
-    {
-      elementType: "labels.text.stroke",
-      stylers: [{ color: "#f5f5f5" }],
-    },
-    {
-      featureType: "poi",
-      stylers: [{ visibility: "simplified" }],
-    },
-    {
-      featureType: "poi.park",
-      elementType: "geometry",
-      stylers: [{ color: "#e5e5e5" }],
-    },
-    {
-      featureType: "road",
-      elementType: "geometry",
-      stylers: [{ color: "#ffffff" }],
-    },
-    {
-      featureType: "road.highway",
-      elementType: "geometry",
-      stylers: [{ color: "#dadada" }],
-    },
-    {
-      featureType: "water",
-      elementType: "geometry",
-      stylers: [{ color: "#c9c9c9" }],
-    },
-  ];
 
   useEffect(() => {
     const initMap = () => {

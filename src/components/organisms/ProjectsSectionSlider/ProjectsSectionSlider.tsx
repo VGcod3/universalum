@@ -12,7 +12,6 @@ import { cn } from "@/lib/utils";
 import { Tags } from "@/types/tags.enum";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/routing";
-import { title } from "process";
 
 export interface Project {
   id: number;

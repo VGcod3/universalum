@@ -1,11 +1,12 @@
 import { setRequestLocale } from "next-intl/server";
 import { ServicesPageSections } from "./ServicesPageSections";
 
-export default function ServicesPage({
-  params: { locale },
+export default async function ServicesPage({
+  params,
 }: Readonly<{
-  params: { locale: "en" | "ua" | "pl" };
+  params: Promise<{ locale: "en" | "ua" | "pl" }>;
 }>) {
+  const { locale } = await params;
   // Enable static rendering
   setRequestLocale(locale);
 
