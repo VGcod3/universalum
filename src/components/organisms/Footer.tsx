@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
 export const FooterBlock = () => {
   const t = useTranslations();
@@ -28,11 +29,21 @@ export const FooterBlock = () => {
             {t("common.menu")}
           </h3>
           <ul className="list-none flex flex-col gap-2 md:gap-3 text-left text-subtitle-1 md:text-heading-6">
-            <li>{t("navigation.home")}</li>
-            <li>{t("navigation.about")}</li>
-            <li>{t("navigation.projects")}</li>
-            <li>{t("navigation.services")}</li>
-            <li>{t("common.certificates")}</li>
+            <li>
+              <Link href="/">{t("navigation.home")}</Link>
+            </li>
+            <li>
+              <Link href="/about">{t("navigation.about")}</Link>
+            </li>
+            <li>
+              <Link href="/projects">{t("navigation.projects")}</Link>
+            </li>
+            <li>
+              <Link href="/services">{t("navigation.services")}</Link>
+            </li>
+            <li>
+              <Link href="/about#certificates">{t("common.certificates")}</Link>
+            </li>
           </ul>
         </div>
         <div className=" col-span-full md:col-span-4 h-full flex flex-col gap-6 items-start text-left">
@@ -56,13 +67,19 @@ export const FooterBlock = () => {
           </h3>
           <div className="flex flex-col items-start gap-4">
             <h6 className="text-subtitle-2 md:text-headline-6">
-              +38 (050) 133-05-06
+              <a href="tel:+380501330506" className="hover:underline">
+                +38 (050) 133-05-06
+              </a>
             </h6>
             <h6 className="text-subtitle-2 md:text-headline-6">
-              +38 (093) 463-49-46
+              <a href="tel:+380934634946" className="hover:underline">
+                +38 (093) 463-49-46
+              </a>
             </h6>
             <h6 className="text-subtitle-2 md:text-headline-6">
-              universalum@ukr.net
+              <a href="mailto:universalum@ukr.net" className="hover:underline">
+                universalum@ukr.net
+              </a>
             </h6>
             <div className="flex gap-4">
               <img

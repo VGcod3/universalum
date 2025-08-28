@@ -10,36 +10,43 @@ export const ProjectsBlock = () => {
 
   const objects = [
     {
+      id: 1,
       img: "/projects/Project1.jpg",
       tags: [Tags.CONCEPT],
       title: t("projects.items.concept1"),
     },
     {
+      id: 2,
       img: "/projects/Project2.jpg",
       tags: [Tags.DESIGN, Tags.CONSTRUCTION],
       title: t("projects.items.construction1"),
     },
     {
+      id: 3,
       img: "/projects/Project3.jpg",
       tags: [Tags.CONCEPT, Tags.DESIGN],
       title: t("projects.items.concept2"),
     },
     {
+      id: 4,
       img: "/projects/Project2.jpg",
       tags: [Tags.DESIGN, Tags.CONSTRUCTION],
       title: t("projects.items.construction1"),
     },
     {
+      id: 5,
       img: "/projects/Project2.jpg",
       tags: [Tags.DESIGN, Tags.CONSTRUCTION],
       title: t("projects.items.construction1"),
     },
     {
+      id: 6,
       img: "/projects/Project3.jpg",
       tags: [Tags.CONCEPT, Tags.DESIGN],
       title: t("projects.items.concept2"),
     },
     {
+      id: 7,
       img: "/projects/Project2.jpg",
       tags: [Tags.DESIGN, Tags.CONSTRUCTION],
       title: t("projects.items.construction1"),
@@ -64,6 +71,7 @@ export const ProjectsBlock = () => {
             image={obj.img}
             title={obj.title}
             tags={obj.tags}
+            href={`/projects/${obj.id}`}
             className="col-span-1"
           />
         ))}

@@ -1,5 +1,6 @@
 import React from "react";
 import { Image, Heading, PlusIcon } from "@/components/atoms";
+import { Link } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import { Tags } from "@/types/tags.enum";
 import { TagItem } from "../TagItem";
@@ -8,20 +9,19 @@ export interface ProjectCardProps {
   image: string;
   title: string;
   tags: Tags[];
-  onClick?: () => void;
+  href: string;
   className?: string;
 }
 
 export const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
-  ({ image, title, tags, onClick, className, ...props }, ref) => {
+  ({ image, title, tags, href, className, ...props }, ref) => {
     return (
       <div
         ref={ref}
         className={cn(
-          "group relative rounded-lg overflow-hidden cursor-pointer h-[350px] flex flex-col justify-end",
+          "group relative rounded-lg overflow-hidden h-[350px] flex flex-col justify-end",
           className
         )}
-        onClick={onClick}
         {...props}
       >
         {/* Background Image */}
@@ -59,9 +59,12 @@ export const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
             </Heading>
 
             {/* Plus icon button  */}
-            <div className="h-10 min-w-10 rounded bg-white flex items-center justify-center text-grayscale-black hover:bg-accent-orange hover:text-white transition-colors duration-300">
+            <Link
+              href={href}
+              className="h-10 min-w-10 rounded bg-white flex items-center justify-center text-grayscale-black hover:bg-accent-orange hover:text-white transition-colors duration-300"
+            >
               <PlusIcon size="md" />
-            </div>
+            </Link>
           </div>
         </div>
       </div>

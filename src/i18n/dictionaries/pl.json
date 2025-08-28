@@ -32,12 +32,33 @@
     "certificates": "Certyfikaty",
     "allRightsReserved": "© 2025 Universalum. Wszystkie prawa zastrzeżone."
   },
+  "certificates": {
+    "title": "Certyfikaty jakości",
+    "description": "Pracujemy zgodnie z obowiązującymi przepisami i standardami w zakresie projektowania i budownictwa. Wszyscy nasi specjaliści posiadają wykształcenie kierunkowe, certyfikaty kwalifikacyjne oraz uprawnienia do wykonywania prac badawczych, projektowych i montażowo-budowlanych."
+  },
   "form": {
     "name": "Imię",
     "email": "E-mail",
     "phone": "Telefon",
     "subject": "Temat",
-    "message": "Wiadomość"
+    "message": "Wiadomość",
+    "validation": {
+      "nameMin": "Imię musi mieć co najmniej 2 znaki",
+      "nameMax": "Imię musi mieć mniej niż 50 znaków",
+      "emailRequired": "Email jest wymagany",
+      "emailInvalid": "Proszę wprowadzić prawidłowy adres email",
+      "phoneMin": "Numer telefonu musi mieć co najmniej 10 znaków",
+      "phoneMax": "Numer telefonu musi mieć mniej niż 20 znaków",
+      "phoneInvalid": "Proszę wprowadzić prawidłowy numer telefonu",
+      "subjectMin": "Temat musi mieć co najmniej 5 znaków",
+      "subjectMax": "Temat musi mieć mniej niż 100 znaków",
+      "messageMin": "Wiadomość musi mieć co najmniej 10 znaków",
+      "messageMax": "Wiadomość musi mieć mniej niż 1000 znaków"
+    },
+    "sending": "Wysyłanie...",
+    "success": "Dziękujemy za wiadomość. Odpowiemy wkrótce!",
+    "error": "Coś poszło nie tak. Spróbuj ponownie.",
+    "networkError": "Błąd sieci. Sprawdź połączenie i spróbuj ponownie."
   },
   "services": {
     "title": "Realizujemy obiekty mieszkalne, komercyjne i infrastrukturalne",

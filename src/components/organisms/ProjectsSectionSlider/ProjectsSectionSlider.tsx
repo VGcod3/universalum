@@ -11,6 +11,8 @@ import ProjectsSlider from "@/components/universal/ProjectsSlider";
 import { cn } from "@/lib/utils";
 import { Tags } from "@/types/tags.enum";
 import { useTranslations } from "next-intl";
+import { useRouter } from "@/i18n/routing";
+import { title } from "process";
 
 export interface Project {
   id: number;
@@ -19,36 +21,10 @@ export interface Project {
   image: string;
 }
 
-export interface ProjectsSectionProps {
-  projects?: Project[];
-  title?: string;
-  description?: string;
-  sectionLabel?: string;
-  viewAllButtonText?: string;
-  onViewAllClick?: () => void;
-  onProjectClick?: (project: Project) => void;
-  className?: string;
-}
-
-export const ProjectsSectionSlider = React.forwardRef<
-  HTMLElement,
-  ProjectsSectionProps
->(
-  (
-    {
-      projects,
-      title,
-      description,
-      sectionLabel,
-      viewAllButtonText,
-      onViewAllClick,
-      onProjectClick,
-      className,
-      ...props
-    },
-    ref
-  ) => {
+export const ProjectsSectionSlider = React.forwardRef<HTMLElement>(
+  ({ ...props }, ref) => {
     const t = useTranslations();
+    const router = useRouter();
 
     const defaultProjects: Project[] = [
       {
@@ -83,11 +59,10 @@ export const ProjectsSectionSlider = React.forwardRef<
       },
     ];
 
-    const projectsToUse = projects || defaultProjects;
-    const sectionLabelToUse = sectionLabel || t("common.ourProjects");
-    const titleToUse = title || t("projects.description");
-    const viewAllButtonTextToUse =
-      viewAllButtonText || t("common.viewAllProjects");
+    const projectsToUse = defaultProjects;
+    const sectionLabelToUse = t("common.ourProjects");
+    const titleToUse = t("projects.description");
+    const viewAllButtonTextToUse = t("common.viewAllProjects");
     const [activeSlide, setActiveSlide] = useState<number>(0);
     const [swiper, setSwiper] = useState<SwiperType>();
 
@@ -103,21 +78,7 @@ export const ProjectsSectionSlider = React.forwardRef<
     const handleNext = () => handleChangeSlide(activeSlide + 1);
 
     const handleViewAllClick = () => {
-      if (onViewAllClick) {
-        onViewAllClick();
-      } else {
-        // Default behavior - navigate to projects page
-        console.log("View all projects clicked");
-      }
-    };
-
-    const handleProjectClick = (project: Project) => {
-      if (onProjectClick) {
-        onProjectClick(project);
-      } else {
-        // Default behavior
-        console.log("Project clicked:", project);
-      }
+      router.push({ pathname: "/projects" });
     };
 
     useEffect(() => {
@@ -129,11 +90,7 @@ export const ProjectsSectionSlider = React.forwardRef<
     }, [swiper, projectsToUse.length]);
 
     return (
-      <section
-        ref={ref}
-        className={cn("w-full py-20 bg-white", className)}
-        {...props}
-      >
+      <section ref={ref} className={cn("w-full py-20 bg-white")} {...props}>
         <div className="container mx-auto px-3 md:px-0">
           {/* Header */}
           <div className="mb-12">
@@ -188,7 +145,7 @@ export const ProjectsSectionSlider = React.forwardRef<
                   image={project.image}
                   title={project.title}
                   tags={project.tags}
-                  onClick={() => handleProjectClick(project)}
+                  href={`/projects/${project.id}`}
                 />
               </SwiperSlide>
             ))}

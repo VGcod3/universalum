@@ -22,7 +22,6 @@ import { redirect } from "@/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
 
 export interface SiteHeaderProps {
-  onContactClick?: () => void;
   className?: string;
 }
 
@@ -138,11 +137,7 @@ const MobileMenu = ({
   );
 };
 
-export const SiteHeader = ({
-  onContactClick,
-  className,
-  ...props
-}: SiteHeaderProps) => {
+export const SiteHeader = ({ className, ...props }: SiteHeaderProps) => {
   const locale = useLocale();
   const t = useTranslations();
   const [selectedLanguage, setSelectedLanguage] = useState<string>(
@@ -183,10 +178,9 @@ export const SiteHeader = ({
   // Handle tab change
   const handleTabChange = (value: string) => {
     const item = NAVIGATION_ITEMS.find((item) => item.value === value);
+
     if (item) {
-      // Include the current locale when navigating
-      const localizedPath =
-        locale === DEFAULT_LANGUAGE ? item.href : `/${locale}${item.href}`;
+      const localizedPath = `/${locale}${item.href}`;
       router.push(localizedPath);
     }
   };
@@ -232,6 +226,13 @@ export const SiteHeader = ({
       document.body.style.overflow = "";
     };
   }, [isMenuOpen]);
+
+  const onContactClick = () => {
+    const contactsSection = document.getElementById("contacts");
+    if (contactsSection) {
+      contactsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <header

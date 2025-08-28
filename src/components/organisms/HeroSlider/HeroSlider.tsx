@@ -5,7 +5,8 @@ import { Image, Text } from "@/components/atoms";
 import { SliderControls } from "@/components/molecules";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { useRouter } from "@/i18n/routing";
 
 export interface HeroSlide {
   image: string;
@@ -18,7 +19,6 @@ export interface HeroSlide {
 export interface HeroSliderProps {
   slides?: HeroSlide[];
   autoplayInterval?: number;
-  onButtonClick?: () => void;
   className?: string;
 }
 
@@ -87,17 +87,12 @@ HeroContent.displayName = "HeroContent";
 
 export const HeroSlider = React.forwardRef<HTMLDivElement, HeroSliderProps>(
   (
-    {
-      slides = defaultSlides,
-      autoplayInterval = 6000,
-      onButtonClick,
-      className,
-      ...props
-    },
+    { slides = defaultSlides, autoplayInterval = 6000, className, ...props },
     ref
   ) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isAutoplay, setIsAutoplay] = useState(true);
+    const router = useRouter();
 
     const nextSlide = useCallback(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
@@ -128,13 +123,13 @@ export const HeroSlider = React.forwardRef<HTMLDivElement, HeroSliderProps>(
       return () => clearTimeout(timeout);
     }, [isAutoplay]);
 
-    // Handle button click
+    // Handle button click with smooth scroll to contacts section
     const handleButtonClick = () => {
-      if (onButtonClick) {
-        onButtonClick();
+      const contactsSection = document.getElementById("contacts");
+      if (contactsSection) {
+        contactsSection.scrollIntoView({ behavior: "smooth" });
       } else {
-        // Default behavior
-        console.log("Hero button clicked");
+        router.push({ pathname: "/#contacts" });
       }
     };
 

@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Image, CheckIcon } from "@/components/atoms";
 import {
@@ -49,13 +47,14 @@ export const LanguageDropdown = React.forwardRef<
             aria-label="Select language"
             {...props}
           >
-            <Image
-              src={currentLanguage.flagSrc}
-              width={20}
-              height={15}
-              alt={`${currentLanguage.name} Flag`}
-              className="mr-2"
-            />
+            <span className="mr-2 inline-flex w-6 h-4 items-center justify-center">
+              <Image
+                src={currentLanguage.flagSrc}
+                width={20}
+                height={15}
+                alt={`${currentLanguage.name} Flag`}
+              />
+            </span>
             <span className="uppercase">{currentLanguage.code}</span>
             <ChevronDownIcon size="sm" className="ml-1" />
           </button>
@@ -68,13 +67,14 @@ export const LanguageDropdown = React.forwardRef<
               onClick={() => onLanguageChange(lang.code)}
             >
               <div className="flex items-center">
-                <Image
-                  src={lang.flagSrc}
-                  width={20}
-                  height={15}
-                  alt={`${lang.name} Flag`}
-                  className="mr-2"
-                />
+                <span className="mr-2 inline-flex w-6 h-4 items-center justify-center">
+                  <Image
+                    src={lang.flagSrc}
+                    width={20}
+                    height={15}
+                    alt={`${lang.name} Flag`}
+                  />
+                </span>
                 <span className="uppercase font-medium">{lang.code}</span>
               </div>
               {selectedLanguage === lang.code && (

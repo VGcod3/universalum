@@ -1,7 +1,9 @@
+"use client";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { useRouter } from "@/i18n/routing";
 
 interface ServiceCardProps {
   title: string;
@@ -52,6 +54,7 @@ export interface ServicesBlockProps {
 
 export function ServicesBlock() {
   const t = useTranslations();
+  const router = useRouter();
 
   // Service data
   const services = [
@@ -89,7 +92,9 @@ export function ServicesBlock() {
               {t("services.title")}
             </h2>
             <div className="col-span-3 md:col-span-1 hidden md:flex justify-end">
-              <Button>{t("common.viewAllServices")}</Button>
+              <Button onClick={() => router.push({ pathname: "/services" })}>
+                {t("common.viewAllServices")}
+              </Button>
             </div>
           </div>
         </div>
@@ -109,7 +114,10 @@ export function ServicesBlock() {
             </div>
           ))}
         </div>
-        <Button className="w-full md:hidden mb-8">
+        <Button
+          className="w-full md:hidden mb-8"
+          onClick={() => router.push({ pathname: "/services" })}
+        >
           {t("common.viewAllServices")}
         </Button>
       </div>

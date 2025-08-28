@@ -1,14 +1,19 @@
+"use client";
 /* eslint-disable @next/next/no-img-element */
 import { GoogleMap } from "@/components/molecules/GoogleMap";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { FormField } from "@/components/ui/form-field";
 import { useTranslations } from "next-intl";
+import { useContactForm } from "@/hooks";
 
 export const AddressAndContactsBlock = () => {
   const t = useTranslations();
+  const { form, onSubmit, isSubmitting, submitStatus } = useContactForm();
+
   return (
-    <div className="py-15 w-full px-3 md:px-0">
+    <div id="contacts" className="py-15 w-full px-3 md:px-0">
       <div className="container mx-auto w-full flex flex-col gap-10">
         <h2 className="text-headline-4 md:text-headline-3 lg:text-headline-3 max-w-3xl lg:max-w-4xl">
           {t("common.addressAndContacts")}
@@ -19,18 +24,81 @@ export const AddressAndContactsBlock = () => {
               <h3 className="text-headline-5 md:text-headline-3 text-grayscale-white">
                 {t("common.contactUs")}
               </h3>
-              <div className="flex flex-col gap-6">
-                <Input placeholder={t("form.name")} />
-                <Input placeholder={t("form.email")} />
-                <Input placeholder={t("form.phone")} />
-                <Input placeholder={t("form.subject")} />
-                <Textarea
-                  placeholder={t("form.message")}
-                  rows={8}
-                  className="min-h-30"
-                />
-              </div>
-              <Button className="w-fit">{t("common.send")}</Button>
+
+              {/* Status Messages */}
+              {submitStatus.type && (
+                <div
+                  className={`p-4 rounded-md ${
+                    submitStatus.type === "success"
+                      ? "bg-green-100 text-green-800 border border-green-200"
+                      : "bg-red-100 text-red-800 border border-red-200"
+                  }`}
+                >
+                  {submitStatus.message}
+                </div>
+              )}
+
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="flex flex-col gap-6"
+              >
+                <FormField error={form.formState.errors.name?.message}>
+                  <Input
+                    placeholder={t("form.name")}
+                    {...form.register("name")}
+                    className={
+                      form.formState.errors.name ? "border-red-500" : ""
+                    }
+                  />
+                </FormField>
+
+                <FormField error={form.formState.errors.email?.message}>
+                  <Input
+                    placeholder={t("form.email")}
+                    type="email"
+                    {...form.register("email")}
+                    className={
+                      form.formState.errors.email ? "border-red-500" : ""
+                    }
+                  />
+                </FormField>
+
+                <FormField error={form.formState.errors.phone?.message}>
+                  <Input
+                    placeholder={t("form.phone")}
+                    type="tel"
+                    {...form.register("phone")}
+                    className={
+                      form.formState.errors.phone ? "border-red-500" : ""
+                    }
+                  />
+                </FormField>
+
+                <FormField error={form.formState.errors.subject?.message}>
+                  <Input
+                    placeholder={t("form.subject")}
+                    {...form.register("subject")}
+                    className={
+                      form.formState.errors.subject ? "border-red-500" : ""
+                    }
+                  />
+                </FormField>
+
+                <FormField error={form.formState.errors.message?.message}>
+                  <Textarea
+                    placeholder={t("form.message")}
+                    rows={8}
+                    className={`min-h-30 ${
+                      form.formState.errors.message ? "border-red-500" : ""
+                    }`}
+                    {...form.register("message")}
+                  />
+                </FormField>
+
+                <Button type="submit" className="w-fit" disabled={isSubmitting}>
+                  {isSubmitting ? t("form.sending") : t("common.send")}
+                </Button>
+              </form>
             </div>
           </div>
           <div className="bg-grayscale-gray1 rounded-3xl col-span-2 md:col-span-1 lg:row-span-1 py-10 px-5 md:px-10 lg:px-16 flex flex-col gap-6 lg:gap-10">
@@ -46,7 +114,9 @@ export const AddressAndContactsBlock = () => {
                   height={36}
                 />
                 <h5 className="text-subtitle-1 md:text-headline-5">
-                  +380 (44) 123 45 67
+                  <a href="tel:+380441234567" className="hover:underline">
+                    +380 (44) 123 45 67
+                  </a>
                 </h5>
               </div>
               <div className="flex gap-3 items-center">
@@ -57,7 +127,9 @@ export const AddressAndContactsBlock = () => {
                   height={36}
                 />
                 <h5 className="text-subtitle-1 md:text-headline-5">
-                  +38 (050) 133-05-06
+                  <a href="tel:+380501330506" className="hover:underline">
+                    +38 (050) 133-05-06
+                  </a>
                 </h5>
               </div>
               <div className="flex gap-3 items-center">
@@ -68,7 +140,12 @@ export const AddressAndContactsBlock = () => {
                   height={36}
                 />
                 <h5 className="text-subtitle-1 md:text-headline-5">
-                  universalum@ukr.net
+                  <a
+                    href="mailto:universalum@ukr.net"
+                    className="hover:underline"
+                  >
+                    universalum@ukr.net
+                  </a>
                 </h5>
               </div>
             </div>
