@@ -5,12 +5,12 @@ import { ArrowRightIcon } from "@/components/atoms";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap transition-all cursor-pointer disabled:pointer-events-none disabled:opacity-40 [&_svg]:pointer-events-none shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] font-medium",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap transition-all cursor-pointer disabled:pointer-events-none disabled:opacity-40 [&_svg]:pointer-events-none shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] font-medium relative",
   {
     variants: {
       variant: {
         default:
-          "bg-grayscale-white hover:bg-accent-orange text-grayscale-black hover:text-grayscale-white text-button rounded-md border border-grayscale-gray3 hover:border-accent-orange",
+          "bg-grayscale-white hover:bg-accent-orange text-grayscale-black hover:text-grayscale-white text-button rounded-md border border-grayscale-gray3 hover:border-accent-orange justify-start",
         primary:
           "bg-primary-medium hover:bg-primary-dark text-grayscale-white border border-primary-medium hover:border-primary-dark rounded-md",
         secondary:
@@ -22,8 +22,8 @@ const buttonVariants = cva(
         icon: "bg-transparent text-grayscale-white hover:text-accent-orange border border-grayscale-white hover:border-accent-orange rounded-md",
       },
       size: {
-        sm: "h-9 px-3 text-sm",
-        default: "h-12 pl-4 pr-1",
+        sm: "h-9 px-3 text-sm pr-12",
+        default: "min-w-[293px] h-12 pl-4 pr-12",
         lg: "h-14 px-8",
         icon: "h-10 w-10",
       },
@@ -71,7 +71,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {children}
         {shouldShowArrow && (
-          <div className="w-10 h-10 bg-accent-orange rounded p-2 text-grayscale-white flex items-center justify-center">
+          <div className="w-10 h-10 bg-accent-orange rounded p-2 text-grayscale-white flex items-center justify-center absolute right-1 top-1">
             <ArrowRightIcon size="md" />
           </div>
         )}

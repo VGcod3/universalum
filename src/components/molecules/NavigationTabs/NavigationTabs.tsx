@@ -3,6 +3,7 @@
 import React from "react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 export interface NavigationItem {
   label: string;
@@ -21,6 +22,7 @@ export const NavigationTabs = React.forwardRef<
   HTMLDivElement,
   NavigationTabsProps
 >(({ items, activeValue, onValueChange, className, ...props }, ref) => {
+  const t = useTranslations();
   return (
     <Tabs
       ref={ref}
@@ -42,7 +44,7 @@ export const NavigationTabs = React.forwardRef<
               "after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300 after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-1 after:h-1 after:bg-accent-orange"
             )}
           >
-            {item.label}
+            {t(item.label)}
           </TabsTrigger>
         ))}
       </TabsList>

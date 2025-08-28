@@ -1,4 +1,5 @@
 import { NavigationItem, Language } from "@/types";
+import { Tags } from "@/types/tags.enum";
 
 // Site Configuration
 export const SITE_CONFIG = {
@@ -20,22 +21,22 @@ export const SITE_CONFIG = {
 // Navigation Configuration
 export const NAVIGATION_ITEMS: NavigationItem[] = [
   {
-    label: "Головна",
+    label: "navigation.home",
     value: "home",
     href: "/",
   },
   {
-    label: "Про компанію",
+    label: "navigation.about",
     value: "about",
     href: "/about",
   },
   {
-    label: "Об'єкти",
+    label: "navigation.projects",
     value: "projects",
     href: "/projects",
   },
   {
-    label: "Послуги",
+    label: "navigation.services",
     value: "services",
     href: "/services",
   },
@@ -44,7 +45,7 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
 // Language Configuration
 export const LANGUAGES: Language[] = [
   {
-    code: "uk",
+    code: "ua",
     name: "Ukrainian",
     nativeName: "Українська",
     flagSrc: "/flags/FlagUA.svg",
@@ -63,8 +64,31 @@ export const LANGUAGES: Language[] = [
   },
 ] as const;
 
+export const tags = [
+  {
+    tag: Tags.ALL,
+    label: "projects.all",
+    stroke: "border-additional-purple",
+  },
+  {
+    tag: Tags.CONCEPT,
+    label: "projects.concept",
+    stroke: "border-additional-red",
+  },
+  {
+    tag: Tags.DESIGN,
+    label: "projects.design",
+    stroke: "border-primary-medium",
+  },
+  {
+    tag: Tags.CONSTRUCTION,
+    label: "projects.construction",
+    stroke: "border-accent-orange",
+  },
+];
+
 // Default language
-export const DEFAULT_LANGUAGE = "uk" as const;
+export const DEFAULT_LANGUAGE = "ua" as const;
 
 // Animation durations (in milliseconds)
 export const ANIMATION_DURATION = {

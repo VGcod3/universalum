@@ -1,0 +1,207 @@
+{
+  "metadata": {
+    "title": "Universalum - Kompleksowe projektowanie i budowa",
+    "description": "Grupa firm zajmujących się badaniami inżynieryjno-geologicznymi i geodezyjnymi, projektowaniem oraz pracami budowlanymi."
+  },
+  "hero": {
+    "title": "Kompleksowe projektowanie i budowa obiektów",
+    "subtitle": "Grupa firm wykonujących badania inżynieryjno-geologiczne i geodezyjne, projektowanie, prace budowlano-montażowe — od fundamentów po wentylowane elewacje z paneli HPL, instalację przezroczystych konstrukcji aluminiowych, szklanych dachów i elewacji.",
+    "cta": "Skontaktuj się z nami"
+  },
+  "navigation": {
+    "home": "Strona główna",
+    "about": "O firmie",
+    "projects": "Projekty",
+    "services": "Usługi"
+  },
+  "common": {
+    "contactUs": "Skontaktuj się z nami",
+    "send": "Wyślij",
+    "viewAllServices": "Zobacz wszystkie usługi",
+    "ourServices": "Nasze usługi",
+    "ourProjects": "Nasze projekty",
+    "viewAllProjects": "Zobacz wszystkie projekty",
+    "ourPartners": "Nasi partnerzy",
+    "partnersDescription": "Pracujemy z wiodącymi dostawcami i partnerami, gwarantując jakość i niezawodność",
+    "reviews": "Opinie",
+    "whatOurClientsSay": "Co mówią o nas nasi klienci",
+    "addressAndContacts": "Adres i kontakty",
+    "contacts": "Kontakty",
+    "address": "Adres",
+    "menu": "Menu",
+    "certificates": "Certyfikaty",
+    "allRightsReserved": "© 2025 Universalum. Wszystkie prawa zastrzeżone."
+  },
+  "form": {
+    "name": "Imię",
+    "email": "E-mail",
+    "phone": "Telefon",
+    "subject": "Temat",
+    "message": "Wiadomość"
+  },
+  "services": {
+    "title": "Realizujemy obiekty mieszkalne, komercyjne i infrastrukturalne",
+    "design": {
+      "title": "Projektowanie",
+      "description": "Kompleksowe przygotowanie dokumentacji projektowej dla obiektów mieszkalnych, komercyjnych i publicznych. Wykonujemy badania inżynieryjno-geologiczne i geodezyjne, opracowujemy rozwiązania architektoniczne, koordynujemy ze wszystkimi instancjami."
+    },
+    "construction": {
+      "title": "Budownictwo",
+      "description": "Budujemy budynki od podstaw - konstrukcje fundamentowe, monolityczne, szkieletowe. Wykonujemy prace dachowe, elewacyjne, wykończeniowe, a także zagospodarowanie terenu. Mamy doświadczenie w realizacji projektów w trudnych warunkach klimatycznych i gruntowych."
+    },
+    "engineering": {
+      "title": "Rozwiązania inżynieryjne",
+      "description": "Opracowanie i montaż nowoczesnych systemów inżynieryjnych: wentylacja, ogrzewanie, instalacje sanitarne, sieci elektryczne, oświetlenie, hydroizolacja. Stosujemy technologie energooszczędne i materiały wysokiej jakości dla długotrwałej i bezpiecznej eksploatacji obiektu."
+    }
+  },
+  "projects": {
+    "all": "Wszystkie",
+    "concept": "Koncepcja",
+    "design": "Projektowanie",
+    "construction": "Budownictwo",
+    "description": "Podejmujemy się pełnego cyklu prac - od przeprowadzenia analizy potencjału działki po zakończenie budowy i oddanie do użytku. Pracujemy odpowiedzialnie, przestrzegając terminów, norm i standardów budowlanych.",
+    "items": {
+      "concept1": "Koncepcja wielorodzinnego budynku mieszkalnego z dachem użytkowym",
+      "construction1": "Budowa wielorodzinnego budynku mieszkalnego",
+      "concept2": "Koncepcja wielorodzinnego budynku mieszkalnego z dachem użytkowym",
+      "complex": "Wielokondygnacyjny kompleks mieszkalny",
+      "quarter": "Kwartał mieszkalny z infrastrukturą"
+    }
+  },
+  "testimonials": {
+    "testimonial1": {
+      "content": "Do najważniejszych zalet TDG COMPANY Sp. z o.o. można zaliczyć terminowe i wysokiej jakości wykonanie prac, kompletowanie wysoko wykwalifikowanym personelem, operatywność w pracy oraz odpowiedzialność za podjęte zobowiązania",
+      "author": "Chuley S.Y.",
+      "position": "Dyrektor Medical Estate Sp. z o.o."
+    },
+    "testimonial2": {
+      "content": "Firma demonstruje najwyższy poziom profesjonalizmu i odpowiedzialności. Wszystkie etapy projektu są realizowane dokładnie w terminie z zachowaniem wszystkich wymagań technicznych. Szczególnie imponuje uwaga do szczegółów i gotowość wyjścia naprzeciw życzeniom klienta",
+      "author": "Kovalenko V.M.",
+      "position": "Dyrektor Techniczny BudTechnologie S.A."
+    },
+    "testimonial3": {
+      "content": "Doskonała organizacja procesu, indywidualne podejście do każdego projektu i profesjonalny zespół. Wszystkie prace są wykonane z jakością i w terminie.",
+      "author": "Petrenko M.I.",
+      "position": "Kierownik Projektów Stroytech S.A."
+    },
+    "testimonial4": {
+      "content": "Współpraca z firmą pozostawiła tylko pozytywne wrażenia. Wysoki poziom profesjonalizmu, ścisłe przestrzeganie terminów i jakość wykonania prac zasługują na najwyższą ocenę.",
+      "author": "Ivanenko O.V.",
+      "position": "Główny Inżynier EnergoBud Sp. z o.o."
+    }
+  },
+  "footer": {
+    "description": "Grupa firm 'Universalum' i 'TDG COMPANY', która wykonuje kompleksowe prace w dziedzinie budownictwa przemysłowego i cywilnego. Prace architektoniczno-projektowe. Prace budowlano-montażowe. Kompleksowe wsparcie dokumentacyjne.",
+    "actualAddress": "Adres faktyczny:",
+    "legalAddress": "Adres prawny:",
+    "actualAddressValue": "ul. B. Chmielnickiego 176, Lwów, 79024",
+    "legalAddressValue": "ul. P. Panca 7a, biuro 35, Lwów, 79020"
+  },
+  "pages": {
+    "about": {
+      "title": "O firmie",
+      "subtitle1": "Grupa firm 'Universalum' i 'TDG COMPANY' to zespół doświadczonych inżynierów, projektantów i budowniczych, którzy realizują złożone i duże projekty w całej Ukrainie i poza nią.",
+      "subtitle2": "Działamy jako generalny projektant i generalny wykonawca, oferując pełny zakres usług: od koncepcji do oddania projektu.",
+      "advantages": {
+        "title": "Nasze zalety",
+        "heading": "Niezawodność sprawdzona dziesiątkami projektów",
+        "teamMembers": "Członkowie zespołu i wykwalifikowani specjaliści",
+        "completedProjects": "Ukończone projekty",
+        "yearsExperience": "Lata doświadczenia wiodących specjalistów",
+        "countries": "Kraje realizacji projektów"
+      },
+      "features": {
+        "experiencedTeam": {
+          "title": "Doświadczony zespół",
+          "description": "Specjaliści z ponad 35-letnim doświadczeniem w realizacji projektów na Ukrainie, w Kazachstanie, Gruzji i Turkmenistanie."
+        },
+        "comprehensiveApproach": {
+          "title": "Kompleksowe podejście",
+          "description": "Wykonujemy cały cykl prac - od koncepcji i projektowania po budowę i oddanie do użytku."
+        },
+        "ownEquipment": {
+          "title": "Własne wyposażenie i oprogramowanie",
+          "description": "Używamy nowoczesnego sprzętu i inżynieryjnych systemów programowych dla dokładności i efektywności na każdym etapie."
+        },
+        "certifiedQuality": {
+          "title": "Certyfikowana jakość",
+          "description": "Cały zespół posiada odpowiednie certyfikaty, a prace są wykonywane zgodnie z normami państwowymi i międzynarodowymi."
+        }
+      }
+    },
+    "services": {
+      "title": "Usługi",
+      "subtitle": "Grupa firm 'UNIVERSALUM' i 'TDG COMPANY' świadczy pełny zakres usług w dziedzinie projektowania i budownictwa. Podejmujemy się wszystkich etapów - od badań technicznych i tworzenia dokumentacji projektowej po realizację obiektu i oddanie go do użytku.",
+      "design": {
+        "architectural": {
+          "title": "Projektowanie architektoniczne i konstrukcyjne",
+          "solutions": "Rozwiązania architektoniczne",
+          "calculation": "Obliczenia i projektowanie konstrukcji",
+          "reconstruction": "Projekty rekonstrukcji i przebudowy",
+          "visualization": "Wizualizacje, prezentacje inwestycyjne"
+        },
+        "engineering": {
+          "title": "Systemy inżynieryjne",
+          "networks": "Sieci wewnętrzne: wentylacja, klimatyzacja, ogrzewanie, zaopatrzenie w wodę, kanalizacja, zasilanie elektryczne",
+          "fireProtection": "Systemy ochrony przeciwpożarowej"
+        },
+        "survey": {
+          "title": "Prace badawcze",
+          "geodetic": "Badania inżynieryjno-geodezyjne",
+          "geological": "Badania inżynieryjno-geologiczne",
+          "inspection": "Inspekcja budynków i konstrukcji"
+        },
+        "ecology": {
+          "title": "Ekologia i ekspertyza",
+          "assessment": "Ocena wpływu na środowisko",
+          "expertise": "Wsparcie ekspertyzy dokumentacji projektowej",
+          "consulting": "Konsultacje w zakresie uzyskiwania dokumentacji pozwoleniowej i uzgadniającej"
+        }
+      },
+      "construction": {
+        "foundation": {
+          "title": "Prace przygotowawcze i fundamentowe",
+          "geodesy": "Geodezja i geologia",
+          "earthworks": "Roboty ziemne",
+          "foundations": "Instalacja fundamentów",
+          "waterproofing": "Hydroizolacja"
+        },
+        "structures": {
+          "title": "Instalacja konstrukcji kapitałowych budynków",
+          "reinforced": "Konstrukcje żelbetowe",
+          "metal": "Konstrukcje metalowe",
+          "floors": "Stropy"
+        },
+        "roofing": {
+          "title": "Dachy i elewacje",
+          "roofs": "Instalacja dachów (membrany PVC)",
+          "facades": "Elewacje wentylowane (HPL, włókno-cement)",
+          "glass": "Dachy i elewacje szklane",
+          "aluminum": "Konstrukcje aluminiowe"
+        },
+        "landscaping": {
+          "title": "Zagospodarowanie terenu",
+          "paving": "Nawierzchnie",
+          "greenery": "Zieleń",
+          "lighting": "Oświetlenie zewnętrzne",
+          "drainage": "Systemy odwadniające (w razie potrzeby)"
+        }
+      },
+      "engineering": {
+        "heating": "Systemy ogrzewania i zaopatrzenia w ciepło",
+        "waterSupply": "Zaopatrzenie w wodę i kanalizacja",
+        "electrical": "Zasilanie elektryczne i oświetlenie wewnętrzne",
+        "fireSafety": "Systemy bezpieczeństwa przeciwpożarowego",
+        "automation": "Automatyzacja i dyspozytoryzacja"
+      }
+    },
+    "projects": {
+      "detail": {
+        "title": "Pokrycie basenu zewnętrznego z wodą termalną",
+        "description1": "Grupa firm 'Universalum' to zespół doświadczonych inżynierów, projektantów i budowniczych, którzy realizują złożone i duże projekty w całej Ukrainie i poza nią.",
+        "description2": "Działamy jako generalny projektant i generalny wykonawca, oferując pełny zakres usług: od koncepcji do oddania projektu.",
+        "location": "Berehove. Obwód zakarpacki. VC Zhayvoronok"
+      }
+    }
+  }
+}

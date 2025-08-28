@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 interface ServiceCardProps {
   title: string;
@@ -50,24 +51,23 @@ export interface ServicesBlockProps {
 }
 
 export function ServicesBlock() {
+  const t = useTranslations();
+
   // Service data
   const services = [
     {
-      title: "Проектування",
-      description:
-        "Комплексна підготовка проєктної документації для житлових, комерційних і громадських об'єктів. Виконуємо інженерно-геологічні та геодезичні вишукування, розробляємо архітектурні рішення, погоджуємо з усіма інстанціями.",
+      title: t("services.design.title"),
+      description: t("services.design.description"),
       icon: "/icons/Projecting.svg",
     },
     {
-      title: "Будівництво",
-      description:
-        "Зводимо будівлі «з нуля» - фундаментні, монолітні, каркасні конструкції. Виконуємо покрівельні, фасадні, опоряджувальні роботи, а також благоустрій території. Маємо досвід реалізації проєктів у складних кліматичних і ґрунтових умовах.",
+      title: t("services.construction.title"),
+      description: t("services.construction.description"),
       icon: "/icons/Building.svg",
     },
     {
-      title: "Інженерні рішення",
-      description:
-        "Розробка і монтаж сучасних інженерних систем: вентиляції, опалення, сантехніка, електромережі, освітлення, гідроізоляції. Застосовуємо енергоефективні технології та якісні матеріали для тривалої та безпечної експлуатації обʼєкта.",
+      title: t("services.engineering.title"),
+      description: t("services.engineering.description"),
       icon: "/icons/EngineeringSolutions.svg",
     },
   ];
@@ -81,15 +81,15 @@ export function ServicesBlock() {
           <div className="flex gap-2 items-center">
             <div className="h-3 w-3 rounded-full bg-accent-orange" />
 
-            <p className="text-body-1">Наші послуги</p>
+            <p className="text-body-1">{t("common.ourServices")}</p>
           </div>
 
           <div className="grid grid-cols-3 gap-y-4">
             <h2 className="col-span-3 md:col-span-2 md:text-headline-2 text-headline-4 font-bold text-grayscale-black">
-              Реалізуємо житлові, комерційні та інфраструктурні об’єкти
+              {t("services.title")}
             </h2>
             <div className="col-span-3 md:col-span-1 hidden md:flex justify-end">
-              <Button>Переглянути всі послуги</Button>
+              <Button>{t("common.viewAllServices")}</Button>
             </div>
           </div>
         </div>
@@ -110,7 +110,7 @@ export function ServicesBlock() {
           ))}
         </div>
         <Button className="w-full md:hidden mb-8">
-          Переглянути всі послуги
+          {t("common.viewAllServices")}
         </Button>
       </div>
     </section>

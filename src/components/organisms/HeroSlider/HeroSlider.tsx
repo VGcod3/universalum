@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
-import { Image, Heading, Text } from "@/components/atoms";
+import { Image, Text } from "@/components/atoms";
 import { SliderControls } from "@/components/molecules";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 export interface HeroSlide {
   image: string;
@@ -17,9 +18,6 @@ export interface HeroSlide {
 export interface HeroSliderProps {
   slides?: HeroSlide[];
   autoplayInterval?: number;
-  title?: string;
-  description?: string;
-  buttonText?: string;
   onButtonClick?: () => void;
   className?: string;
 }
@@ -60,39 +58,29 @@ SlideImage.displayName = "SlideImage";
 
 // Static content component
 const HeroContent = React.memo(
-  ({
-    title,
-    description,
-    buttonText,
-    onButtonClick,
-  }: {
-    title: string;
-    description: string;
-    buttonText: string;
-    onButtonClick: () => void;
-  }) => (
-    <div className="relative z-20 h-full w-full flex flex-col items-center justify-center text-center px-4">
-      <div className="max-w-6xl flex flex-col items-center gap-6">
-        <Heading
-          level="h1"
-          color="white"
-          className="text-headline-3 md:text-headline-1 text-grayscale-white"
-        >
-          {title}
-        </Heading>
-        <Text
-          variant="body1"
-          color="white"
-          className="max-w-3xl md:text-headline-5"
-        >
-          {description}
-        </Text>
-        <Button className="mt-4" onClick={onButtonClick}>
-          {buttonText}
-        </Button>
+  ({ onButtonClick }: { onButtonClick: () => void }) => {
+    const t = useTranslations();
+
+    return (
+      <div className="relative z-20 h-full w-full flex flex-col items-center justify-center text-center px-4">
+        <div className="max-w-6xl flex flex-col items-center gap-6">
+          <h1 className="text-headline-3 md:text-headline-1 text-grayscale-white">
+            {t("hero.title")}
+          </h1>
+          <Text
+            variant="body1"
+            color="white"
+            className="max-w-3xl md:text-headline-5"
+          >
+            {t("hero.subtitle")}
+          </Text>
+          <Button className="mt-4" onClick={onButtonClick}>
+            {t("hero.cta")}
+          </Button>
+        </div>
       </div>
-    </div>
-  )
+    );
+  }
 );
 
 HeroContent.displayName = "HeroContent";
@@ -102,9 +90,6 @@ export const HeroSlider = React.forwardRef<HTMLDivElement, HeroSliderProps>(
     {
       slides = defaultSlides,
       autoplayInterval = 6000,
-      title = "Комплексне проектування та будівництво об'єктів",
-      description = "Група компаній, що виконують інженерно-геологічні та геодезичні вишукування, проектування, будівельно-монтажні роботи — від фундаменту до вентильованого фасаду з HPL панелей, влаштування світлопрозорих алюмінієвих конструкцій, скляних дахів та фасадів.",
-      buttonText = "ЗВ'ЯЖІТЬСЯ З НАМИ",
       onButtonClick,
       className,
       ...props
@@ -169,12 +154,7 @@ export const HeroSlider = React.forwardRef<HTMLDivElement, HeroSliderProps>(
         ))}
 
         {/* Static content */}
-        <HeroContent
-          title={title}
-          description={description}
-          buttonText={buttonText}
-          onButtonClick={handleButtonClick}
-        />
+        <HeroContent onButtonClick={handleButtonClick} />
 
         {/* Navigation controls - only show if more than one slide */}
         {slides.length > 1 && (

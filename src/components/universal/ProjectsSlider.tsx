@@ -12,17 +12,19 @@ const ProjectsSlider = ({
   setActiveSlide,
   setSwiper,
   swiper,
+  ssspw,
 }: {
   children: React.ReactNode;
   activeSlide: number;
   setActiveSlide: (slideIndex: number) => void;
   swiper?: SwiperType;
   setSwiper: ((swiper: SwiperType) => void) | undefined;
+  ssspw: number | undefined;
 }) => {
   return (
     <Swiper
       spaceBetween={24}
-      slidesPerView={1}
+      slidesPerView={ssspw}
       initialSlide={activeSlide}
       onSlideChange={() => setActiveSlide(swiper?.realIndex as number)}
       onSwiper={setSwiper}

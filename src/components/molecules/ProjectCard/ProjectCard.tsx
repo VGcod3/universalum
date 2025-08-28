@@ -1,12 +1,13 @@
 import React from "react";
 import { Image, Heading, PlusIcon } from "@/components/atoms";
-import { Tag } from "@/components/molecules/Tag";
 import { cn } from "@/lib/utils";
+import { Tags } from "@/types/tags.enum";
+import { TagItem } from "../TagItem";
 
 export interface ProjectCardProps {
   image: string;
   title: string;
-  tags: string[];
+  tags: Tags[];
   onClick?: () => void;
   className?: string;
 }
@@ -33,17 +34,21 @@ export const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
         />
 
         {/* Content overlay */}
-        <div className="p-6 text-grayscale-white z-10">
+        <div className="p-6 text-grayscale-white z-10 flex flex-col justify-between">
           {/* Tags */}
-          <div className="flex flex-wrap gap-2 mb-3">
+          <div className="flex flex-wrap gap-2 mb-2">
             {tags.map((tag, index) => (
-              <Tag key={index} variant="default">
-                {tag}
-              </Tag>
+              <TagItem
+                key={index}
+                tag={tag}
+                isActive={false}
+                onClick={() => {}}
+                className="bg-grayscale-white text-grayscale-black"
+              />
             ))}
           </div>
 
-          <div className="flex gap-4 w-full justify-between">
+          <div className="flex gap-4 w-full justify-between items-end">
             {/* Title */}
             <Heading
               level="h5"
