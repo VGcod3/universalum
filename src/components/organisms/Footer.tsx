@@ -67,13 +67,13 @@ export const FooterBlock = () => {
           </h3>
           <div className="flex flex-col items-start gap-4">
             <h6 className="text-subtitle-2 md:text-headline-6">
-              <a href="tel:+380501330506" className="hover:underline">
-                +38 (050) 133-05-06
+              <a href="tel:+380934634946" className="hover:underline">
+                +38 (093) 463-49-46
               </a>
             </h6>
             <h6 className="text-subtitle-2 md:text-headline-6">
-              <a href="tel:+380934634946" className="hover:underline">
-                +38 (093) 463-49-46
+              <a href="tel:+380501330506" className="hover:underline">
+                +38 (050) 133-05-06
               </a>
             </h6>
             <h6 className="text-subtitle-2 md:text-headline-6">
@@ -82,21 +82,42 @@ export const FooterBlock = () => {
               </a>
             </h6>
             <div className="flex gap-4">
-              <img
-                src="/socials/facebook.svg"
-                alt="Facebook"
-                className="w-10 h-10"
-              />
-              <img
-                src="/socials/whatsapp.svg"
-                alt="WhatsApp"
-                className="w-10 h-10"
-              />
-              <img
-                src="/socials/telegram.svg"
-                alt="Telegram"
-                className="w-10 h-10"
-              />
+              <a
+                href="https://www.facebook.com/share/1AtZtnT29v/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                <img
+                  src="/socials/facebook.svg"
+                  alt="Facebook"
+                  className="w-10 h-10"
+                />
+              </a>
+              <a
+                href="https://wa.me/380501330506"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+              >
+                <img
+                  src="/socials/whatsapp.svg"
+                  alt="WhatsApp"
+                  className="w-10 h-10"
+                />
+              </a>
+              <a
+                href="https://www.instagram.com/tov_universalum?igsh=MTNlcmhpYzJmZHpnOQ=="
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <img
+                  src="/socials/instagram.svg"
+                  alt="Instagram"
+                  className="w-10 h-10"
+                />
+              </a>
             </div>
           </div>
         </div>

@@ -114,8 +114,8 @@ export const AddressAndContactsBlock = () => {
                   height={36}
                 />
                 <h5 className="text-subtitle-1 md:text-headline-5">
-                  <a href="tel:+380441234567" className="hover:underline">
-                    +380 (44) 123 45 67
+                  <a href="tel:+380934634946" className="hover:underline">
+                    +38 (093) 463-49-46
                   </a>
                 </h5>
               </div>

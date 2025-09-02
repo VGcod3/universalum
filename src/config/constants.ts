@@ -1,23 +1,6 @@
 import { NavigationItem, Language } from "@/types";
 import { Tags } from "@/types/tags.enum";
 
-// Site Configuration
-export const SITE_CONFIG = {
-  name: "Universalum",
-  description:
-    "Група компаній, що виконують інженерно-геологічні та геодезичні вишукування, проектування, будівельно-монтажні роботи",
-  url: "https://universalum.com",
-  ogImage: "/og-image.jpg",
-  keywords: [
-    "будівництво",
-    "проектування",
-    "інженерно-геологічні вишукування",
-    "геодезичні вишукування",
-    "архітектура",
-    "Україна",
-  ],
-} as const;
-
 // Navigation Configuration
 export const NAVIGATION_ITEMS: NavigationItem[] = [
   {
@@ -89,40 +72,3 @@ export const tags = [
 
 // Default language
 export const DEFAULT_LANGUAGE = "ua" as const;
-
-// Animation durations (in milliseconds)
-export const ANIMATION_DURATION = {
-  fast: 150,
-  normal: 300,
-  slow: 500,
-  slider: 1000,
-} as const;
-
-// Breakpoints (should match Tailwind config)
-export const BREAKPOINTS = {
-  sm: 640,
-  md: 768,
-  lg: 1024,
-  xl: 1280,
-  "2xl": 1536,
-} as const;
-
-// Hero slider configuration
-export const HERO_SLIDER_CONFIG = {
-  autoplayInterval: 6000,
-  autoplayResumeDelay: 10000,
-} as const;
-
-// Contact information
-export const CONTACT_INFO = {
-  email: "info@universalum.com",
-  phone: "+380 XX XXX XX XX",
-  address: "Адреса офісу, Київ, Україна",
-} as const;
-
-// Social media links
-export const SOCIAL_LINKS = {
-  facebook: "https://facebook.com/universalum",
-  instagram: "https://instagram.com/universalum",
-  linkedin: "https://linkedin.com/company/universalum",
-} as const;
