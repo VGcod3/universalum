@@ -95,7 +95,7 @@ export const FooterBlock = () => {
                 />
               </a>
               <a
-                href="https://wa.me/380501330506"
+                href="https://wa.me/380934634946"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
